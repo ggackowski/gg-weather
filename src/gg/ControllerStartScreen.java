@@ -28,26 +28,41 @@ public class ControllerStartScreen {
 
     }
 
+    /**
+     * Funkcja obsługująca przycisk przechodzący do sceny MPickStation
+     */
     @FXML
-    void enterStationButton_onAction(ActionEvent e) throws java.io.IOException {
+    void enterStationButton_onAction() {
         Main.scenesManager.setScene("MPickStation");
     }
 
+    /**
+     * Funkcja obsługująca przycisk wychodzący z aplikacji
+     */
     @FXML
     void exitButton_onAction() {
         System.exit(0);
     }
 
+    /**
+     * Funkcja obsługująca przycisk przechodzący do sceny MUV
+     */
     @FXML
     void UVButton_onAction() {
         Main.scenesManager.setScene("MUV");
     }
 
+    /**
+     * Funkcja obsługująca przycisk przechodzący do sceny MGraph
+     */
     @FXML
     void GraphButton_onAction() {
         Main.scenesManager.setScene("MGraph");
     }
 
+    /**
+     * Funkcja obsługująca przycisk przechodzący do sceny MPlot
+     */
     @FXML
     void plotButton_onAction() { Main.scenesManager.setScene("MPlot"); }
 }

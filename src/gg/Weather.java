@@ -1,5 +1,8 @@
 package gg;
 
+/**
+ * Klasa przechowująca informacje o pogodzie w danym miejscu
+ */
 public class Weather {
     public String description;
     public int pressure;

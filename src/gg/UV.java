@@ -7,6 +7,15 @@ public class UV {
    float value;
    int date;
 
+    /**
+     * @param la
+     * @param lo
+     * @param d
+     * @param v
+     * @param dt
+     * Konstruktor klasy UV
+     */
+
    UV(float la, float lo, String d, float v, int dt) {
        lat = la;
        lon = lo;

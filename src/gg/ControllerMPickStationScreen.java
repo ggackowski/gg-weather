@@ -20,23 +20,36 @@ public class ControllerMPickStationScreen {
     private Weather weather;
     private String stationName;
 
+    /**
+     *  Kontroler widoku wyboru stacji pomiarowej
+     */
     public ControllerMPickStationScreen() {
     }
 
+    /**
+     * Funkcja obsługująca przycisk powrotu do ekranu początkowego
+     */
     @FXML
-    void actionBack() throws java.io.IOException{
+    void actionBack() {
        Main.scenesManager.setScene("Start");
     }
 
 
-
+    /**
+     * Funkcja obsługująca przycisk "Next". Laczy się z API
+     * i wyświetla informacje o pogodzie w danym miejscu
+     */
     @FXML
-    void actionNext() throws  java.io.IOException {
+    void actionNext() {
         stationName = stationTextField.getCharacters().toString();
         weather = Ow_api.INSTANCE.getActualWeather(stationName);
-        resultText.setText("Actual weather in " + stationName + "\nTemperature " + String.format("%.2f", (weather.temperature - 273.15)) + "'C\nShort weather description " + weather.description
-                + "\nHumidity " + weather.humidity + "\nPressure " + weather.pressure + "\nWind speed " +weather.wind + "\nClouds " + weather.clouds );
-        resultText.setVisible(true);
-
+        if (weather == null) {
+            resultText.setText("Error");
+        }
+        else {
+            resultText.setText("Actual weather in " + stationName + "\nTemperature " + String.format("%.2f", (weather.temperature - 273.15)) + "'C\nShort weather description " + weather.description
+                    + "\nHumidity " + weather.humidity + "\nPressure " + weather.pressure + "\nWind speed " + weather.wind + "\nClouds " + weather.clouds);
+            resultText.setVisible(true);
+        }
     }
 }

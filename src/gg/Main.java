@@ -28,6 +28,10 @@ public class Main extends Application {
     }
 
 
+    /**
+     * @param args - Argumenty z konsoli
+     * Funkcja rozpoczynająca działanie programu
+     */
     public static void main(String[] args) {
         launch(args);
     }

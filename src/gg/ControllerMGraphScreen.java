@@ -4,11 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 
-import java.util.LinkedList;
-import java.util.List;
-
+/**
+ *  Kontroler do widoku wyświetlającego mapę
+ */
 public class ControllerMGraphScreen {
     Image img;
     @FXML
@@ -17,22 +16,32 @@ public class ControllerMGraphScreen {
     private ImageView map;
 
 
-    void parseStations() throws java.io.IOException {
+    /**
+     *  Funkcja parsująca wprowadzone informacje o stacjach pomiarowych.
+     */
+    void parseStations() {
         String[] text = TextField.getCharacters().toString().split(", *");
-        String imgsrc = Ow_api.INSTANCE.getMap(text[0], text[1], text[2], text[3]);
-        img = new Image(imgsrc);
-        map.setImage(img);
-        System.out.println(img.getHeight());
-        System.out.println(map.getFitHeight());
+            String imgsrc = Ow_api.INSTANCE.getMap(text[0], text[1], text[2], text[3]);
+            System.out.println(imgsrc);
+                img = new Image(imgsrc);
+                map.setImage(img);
+                System.out.println(img.getHeight());
+                System.out.println(map.getFitHeight());
+            }
 
-    }
+    /**
+     *  Funkcja obsługująca przycisk powrotu do ekranu głównego
+     */
     @FXML
-    void actionBack() throws java.io.IOException{
+    void actionBack() {
         Main.scenesManager.setScene("Start");
     }
 
+    /**
+     * Funkcja obsługująca przycisk "Next"
+     */
     @FXML
-    void actionNext() throws java.io.IOException{
+    void actionNext() {
         parseStations();
 
     }

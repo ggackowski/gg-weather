@@ -7,11 +7,19 @@ import javafx.stage.Stage;
 
 import java.util.HashMap;
 
+/**
+ *
+ * Singleton obsługujący funkcjonalność przechodzenia pomiędzy scenami
+ */
 public class ScenesManagerSingleton {
 
     HashMap<String, Scene> scenes;
     Stage stage;
 
+    /**
+     * @param s nazwa stage
+     * @throws java.io.IOException
+     */
     public ScenesManagerSingleton(Stage s) throws java.io.IOException {
         stage = s;
         scenes = new HashMap<>();
@@ -25,21 +33,21 @@ public class ScenesManagerSingleton {
         };
 
         for (String name : scenesNames) {
-            System.out.println(getClass().getResource(name + "Screen.fxml"));
             root= FXMLLoader.load(getClass().getResource(name + "Screen.fxml"));
             Scene scene =new Scene(root);
-            System.out.println(scene);
             scenes.put(name, scene);
         }
     }
 
+    /**
+     * @param sceneName nazwa sceny
+     *              Funkcja zmienia aktualną scenę na podaną w argumencie
+     */
     public void setScene(String sceneName) {
         if (scenes.containsKey(sceneName)) {
-            System.out.println("bla");
             stage.setScene(scenes.get(sceneName));
             stage.show();
         }
-        System.out.println("xd");
     }
 
     public static ScenesManagerSingleton getInstance(Stage s) throws java.io.IOException {
