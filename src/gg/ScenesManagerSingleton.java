@@ -16,11 +16,12 @@ public class ScenesManagerSingleton {
         stage = s;
         scenes = new HashMap<>();
         Parent root;
-
         String[] scenesNames = {
                 "MPickStation",
-                "Start"
-
+                "Start",
+                "MUV",
+                "MGraph",
+                "MPlot"
         };
 
         for (String name : scenesNames) {
@@ -30,10 +31,6 @@ public class ScenesManagerSingleton {
             System.out.println(scene);
             scenes.put(name, scene);
         }
-
-
-        //s.setScene(scene);
-        //s.show();
     }
 
     public void setScene(String sceneName) {

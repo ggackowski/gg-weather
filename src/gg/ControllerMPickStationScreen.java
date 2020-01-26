@@ -19,10 +19,8 @@ public class ControllerMPickStationScreen {
 
     private Weather weather;
     private String stationName;
-    Ow_api api;
 
     public ControllerMPickStationScreen() {
-        api = new Ow_api();
     }
 
     @FXML
@@ -35,11 +33,9 @@ public class ControllerMPickStationScreen {
     @FXML
     void actionNext() throws  java.io.IOException {
         stationName = stationTextField.getCharacters().toString();
-        weather = api.getActualWeather(stationName);
-        System.out.println("Actual weather in " + stationName + "\nTemperature " + String.format("%.2f",(weather.temperature - 273.15)) + "'C\nShort weather description " + weather.description
-                + "\nHumidity " + weather.humidity + "\nPressure " + weather.pressure + "\nWind speed " +weather.wind + "\nClouds " + weather.clouds );
+        weather = Ow_api.INSTANCE.getActualWeather(stationName);
         resultText.setText("Actual weather in " + stationName + "\nTemperature " + String.format("%.2f", (weather.temperature - 273.15)) + "'C\nShort weather description " + weather.description
-        + "\nHumidity " + weather.humidity + "\nPressure " + weather.pressure + "\nWind speed " +weather.wind + "\nClouds " + weather.clouds );
+                + "\nHumidity " + weather.humidity + "\nPressure " + weather.pressure + "\nWind speed " +weather.wind + "\nClouds " + weather.clouds );
         resultText.setVisible(true);
 
     }

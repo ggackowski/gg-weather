@@ -11,6 +11,13 @@ public class ControllerStartScreen {
     private Button exitButton;
     @FXML
     private Button enterStationButton;
+    @FXML
+    private Button GraphButton;
+    @FXML
+    private Button UVButton;
+
+    @FXML
+    private Button plotButton;
 
     public ControllerStartScreen() {
 
@@ -31,7 +38,16 @@ public class ControllerStartScreen {
         System.exit(0);
     }
 
+    @FXML
+    void UVButton_onAction() {
+        Main.scenesManager.setScene("MUV");
+    }
 
+    @FXML
+    void GraphButton_onAction() {
+        Main.scenesManager.setScene("MGraph");
+    }
 
-
+    @FXML
+    void plotButton_onAction() { Main.scenesManager.setScene("MPlot"); }
 }

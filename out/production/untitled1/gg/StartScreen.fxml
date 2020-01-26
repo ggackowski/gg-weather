@@ -26,9 +26,9 @@
     <AnchorPane prefHeight="386.0" prefWidth="326.0" VBox.vgrow="ALWAYS">
          <children>
             <Button fx:id="enterStationButton" layoutX="111.0" layoutY="127.0" mnemonicParsing="false" onAction="#enterStationButton_onAction" prefHeight="25.0" prefWidth="103.0" text="Pick station" textAlignment="CENTER" />
-            <Button contentDisplay="CENTER" layoutX="111.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Pick area" />
-            <Button layoutX="111.0" layoutY="207.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="create graph" />
-            <Button layoutX="111.0" layoutY="245.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="UV" />
+            <Button fx:id="plotButton" contentDisplay="CENTER" layoutX="111.0" layoutY="166.0" mnemonicParsing="false" onAction="#plotButton_onAction" prefHeight="25.0" prefWidth="103.0" text="Pick area" />
+            <Button layoutX="111.0" layoutY="207.0" mnemonicParsing="false" onAction="#GraphButton_onAction" prefHeight="25.0" prefWidth="103.0" text="create graph" />
+            <Button fx:id="UVButton" layoutX="111.0" layoutY="245.0" mnemonicParsing="false" onAction="#UVButton_onAction" prefHeight="25.0" prefWidth="103.0" text="UV" />
             <Button fx:id="exitButton" layoutX="112.0" layoutY="282.0" mnemonicParsing="false" onAction="#exitButton_onAction" text="Exit GG Weather" />
             <Accordion layoutX="62.0" layoutY="39.0" />
             <Text fontSmoothingType="LCD" layoutX="43.0" layoutY="74.0" stroke="#5b0d0d" strokeType="OUTSIDE" strokeWidth="0.0" text="GG Weather" textAlignment="CENTER" wrappingWidth="240.64646911621094">

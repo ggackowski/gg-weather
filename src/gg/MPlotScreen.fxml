@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="386.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gg.ControllerMPlotScreen">
+  <children>
+    <MenuBar prefWidth="640.0" VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem mnemonicParsing="false" text="About GG Weather" />
+              </items>
+            </Menu>
+         </menus>
+    </MenuBar>
+    <AnchorPane prefHeight="386.0" prefWidth="326.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Accordion layoutX="62.0" layoutY="39.0" />
+            <TextField fx:id="inputField" layoutX="89.0" layoutY="97.0" />
+            <Text layoutX="80.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter name of a station and parameter for plot" textAlignment="CENTER" wrappingWidth="167.40234375" />
+            <Button fx:id="backButton" layoutX="14.0" layoutY="322.0" mnemonicParsing="false" onAction="#actionBack" text="Back" />
+            <Button fx:id="nextButton" layoutX="260.0" layoutY="322.0" mnemonicParsing="false" onAction="#actionNext" text="Next" />
+            <Text fx:id="resultText" layoutX="89.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="149.0" />
+            <LineChart fx:id="plot" layoutX="55.0" layoutY="137.0" prefHeight="152.0" prefWidth="149.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children></AnchorPane>
+  </children>
+</VBox>
